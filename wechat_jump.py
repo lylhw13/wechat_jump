@@ -58,7 +58,7 @@ def recog_score(img):
 def cal_distance(img):
     rows, cols, _ = img.shape
     # calculate the chess position
-    chess = cv2.imread('D:/test/chess_1440_2560.jpg')
+    chess = cv2.imread('data/chess_1440_2560.jpg')
     h, w, _ = chess.shape
     res = cv2.matchTemplate(img, chess, cv2.TM_CCOEFF_NORMED)
     *_, max_loc = cv2.minMaxLoc(res)
@@ -109,7 +109,7 @@ def cal_distance(img):
 
 
 def detect_failure(img):
-    play_again_img = cv2.imread('D:/test/play_again_1440_2560.jpg')
+    play_again_img = cv2.imread('data/play_again_1440_2560.jpg')
 
     res = cv2.matchTemplate(img, play_again_img, cv2.TM_CCOEFF_NORMED)
     _, max_val, _, max_loc = cv2.minMaxLoc(res)
@@ -125,7 +125,7 @@ def pull_pic(curr_dir):
 
 
 work_dir = './image/'
-goal = 10
+goal = 200
 time_ratio = 1  # for the 1440*2560 the ratio is 1
 
 
